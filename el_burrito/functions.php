@@ -163,4 +163,7 @@ require get_template_directory() . '/inc/jetpack.php';
 /* Call the file that controls the theme options 
 */
 require	get_stylesheet_directory() .'/inc/options.php';
+
+// Call the file that makes our new widget
+require	get_stylesheet_directory() .'/inc/thewidget.php';
 ?>
