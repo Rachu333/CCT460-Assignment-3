@@ -23,4 +23,12 @@ function super_awesome_link($content){
 	return	$content;
 	}
 	add_filter( 'the_content', 'super_awesome_link');
+
+function cd_check_WP_version(){
+	if ( version_compare( get_bloginfo( 'version' ), '4', '<' ) ){
+	wp_die( "You must update WordPress to use this plugin!" );   
+	}
+	}
+register_activation_hook( __FILE__,
+'cd_check_WP_version' );
 ?>
