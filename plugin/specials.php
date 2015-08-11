@@ -13,27 +13,21 @@ Author URI: http://www.sheridanc.on.ca
 */
 
 
+
 /**
- * Adds PHPAssignment widget.
+ * Adds 'Specials' widget.
  */
 
-
-function CD_Widget_Styles(){
-wp_enqueue_style('widget-style', plugins_url
-('/css/widget-style.css', __FILE__));
-}
-add_action( 'wp_enqueue_scripts', 'CD_Widget_Styles' );
-
-class [specials] extends WP_Widget {
-           function [PluginNameWithoutSpaces]() {
+class Specials extends WP_Widget {
+           function Specials () {
                      $widget_ops = array(
-                     'classname' => '[specials]',
-                     'description' => '[Our Specials Menu]'
+                     'classname' => 'Specials',
+                     'description' => 'El Burrito Specials'
            ); 
 
           $this->WP_Widget(
-                     '[specials]',
-                     '[specials]',
+                     'Specials',
+                     'Specials',
                      $widget_ops
            );
  }
@@ -47,7 +41,5 @@ class [specials] extends WP_Widget {
 
 add_action(
            'widgets_init',
-           create_function('','return register_widget("[PluginNameWithoutSpaces]");')
+           create_function('','return register_widget("Specials");')
  );
- ?>
-
