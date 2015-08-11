@@ -1,11 +1,24 @@
-<?php /* 
-* Plugin Name: My Super Awesome Plugin 
-* Plugin URI: http://codediva.com 
-* Description: A Basic WordPress Plugin Template 
-* Author: Code Diva 
-* Version: 1.0 
-* Author URI: http://codediva.com 
+<?php
+
+/**
+ * @package PHP Assignment
+ * @version 1.0
+ */
+/*
+Plugin Name: Specials
+Plugin URI: http://www.sheridanc.on.ca
+Description: The widget for El Burrito's specials
+Author: Isha Thaker, Alistair D'Cruz, Rachana Sai
+Version: 1.0
+Author URI: http://www.sheridanc.on.ca
 */
+
+
+/**
+ * Adds PHPAssignment widget.
+ */
+
+
 function my_super_awesome_plugin(){ 
 	echo"Hey! My Super Awesome plugin works!";
 }
