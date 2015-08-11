@@ -14,10 +14,12 @@ Author URI: http://www.sheridanc.on.ca
 */
 
 
+
 /**
  * Adds 'Specials' widget.
  */
 
+<<<<<<< HEAD
 class specials extends WP_Widget {
            function Specials () {
                      $widget_ops = array(
@@ -28,6 +30,18 @@ class specials extends WP_Widget {
           $this->WP_Widget(
                      'specials',
                      'specials',
+=======
+class Specials extends WP_Widget {
+           function Specials () {
+                     $widget_ops = array(
+                     'classname' => 'Specials',
+                     'description' => 'El Burrito Specials'
+           ); 
+
+          $this->WP_Widget(
+                     'Specials',
+                     'Specials',
+>>>>>>> origin/master
                      $widget_ops
            );
  }
@@ -41,6 +55,11 @@ class specials extends WP_Widget {
 
 add_action(
            'widgets_init',
+<<<<<<< HEAD
            create_function('','return register_widget("specials");')
  );
  ?>
+=======
+           create_function('','return register_widget("Specials");')
+ );
+>>>>>>> origin/master
