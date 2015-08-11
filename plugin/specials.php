@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package PHP Assignment
  * @version 1.0
@@ -6,7 +7,7 @@
 /*
 Plugin Name: Specials
 Plugin URI: http://www.sheridanc.on.ca
-Description: The widget for El Burrito's Specials
+Description: The widget for El Burrito's specials
 Author: Isha Thaker, Alistair D'Cruz, Rachana Sai
 Version: 1.0
 Author URI: http://www.sheridanc.on.ca
@@ -14,26 +15,19 @@ Author URI: http://www.sheridanc.on.ca
 
 
 /**
- * Adds PHPAssignment widget.
+ * Adds 'Specials' widget.
  */
 
-
-function Widget_Styles(){
-wp_enqueue_style('widget-style', plugins_url
-('/css/widget-style.css', __FILE__));
-}
-add_action( 'wp_enqueue_scripts', 'CD_Widget_Styles' );
-
-class [specials] extends WP_Widget {
-           function [specials]() {
+class specials extends WP_Widget {
+           function Specials () {
                      $widget_ops = array(
-                     'classname' => '[specials]',
-                     'description' => '[Our Specials Menu]'
+                     'classname' => 'specials',
+                     'description' => 'our specials menu'
            ); 
 
           $this->WP_Widget(
-                     '[specials]',
-                     '[specials]',
+                     'specials',
+                     'specials',
                      $widget_ops
            );
  }
@@ -50,4 +44,3 @@ add_action(
            create_function('','return register_widget("specials");')
  );
  ?>
-
