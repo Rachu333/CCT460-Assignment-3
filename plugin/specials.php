@@ -58,8 +58,18 @@ add_action(
 <<<<<<< HEAD
            create_function('','return register_widget("specials");')
  );
- ?>
-=======
-           create_function('','return register_widget("Specials");')
- );
->>>>>>> origin/master
+
+
+ add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'specials',
+    array(
+      'labels' => array(
+        'name' => __( 'Specials' ),
+        'singular_name' => __( 'Specials' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+}
