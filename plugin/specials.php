@@ -18,11 +18,6 @@ Author URI: http://www.sheridanc.on.ca
  */
 
 
-function my_super_awesome_plugin(){ 
-	echo"Hey! My Super Awesome plugin works!";
-}
-add_action( 'wp_footer', 'my_super_awesome_plugin');
-
 function CD_Widget_Styles(){
 wp_enqueue_style('widget-style', plugins_url
 ('/css/widget-style.css', __FILE__));
