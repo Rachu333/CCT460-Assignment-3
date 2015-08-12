@@ -1,11 +1,11 @@
 == Plugin Info ===
 Plugin Name: Specials
-Contributors: Rachana Sai, Isha Thaker, Alistair D'Cruz
-Author URL: http://phoenix.sheridanc.on.ca/~ccit2710/
-Requires WordPress Version: 3.0 or higher
-Tested up to: 3.0
-Last Updated: 12/08/2015
- 
+Plugin URI: http://www.sheridanc.on.ca
+Description: The widget for El Burrito's specials
+Author: Isha Thaker, Alistair D'Cruz, Rachana Sai
+Version: 1.0
+Author URI: phoenix.sheridanc.on.ca/~ccit2710
+
 SHORT DESCRIPTION [SPECIALS]
 
 Specials is a plugin designed for our prototype client El Burrito to display their weekly specials menu without a lot of customization.
