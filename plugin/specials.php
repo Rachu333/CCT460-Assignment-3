@@ -49,6 +49,7 @@ class Specials extends WP_Widget {
 }
 
 /* This is the front-end display of the widget; how the widget will appear. Creating a post type called specials that will show only 4 posts per page.
+We use $args to echo arguments passed on to function.
 	*/ 
 	
 	public function widget( $args, $instance ) {
@@ -81,7 +82,7 @@ class Specials extends WP_Widget {
 		echo $args['after_widget'];
 	}
 
-/* This is the back-end of the widget form; how the widget will look. */
+/* This is the back-end of our widget; how our widget will look. */
 	
 	public function form( $instance ) {
 			$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'text_domain' );
