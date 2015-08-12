@@ -13,18 +13,19 @@ Author URI: phoenix.sheridanc.on.ca/~ccit2710
 /*
 function register_plugin_styles()
 	{
- wp_register_style( 'plugin-style', plugins_url('/style.css' ) );
+ wp_register_style( 'plugin-style', plugins_url('/specials/style.css' ) );
 	wp_enqueue_style( 'plugin-style' );
  }
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
 */
 
 // FATIMA;S CODE
-
+/*
 function specials_stylesheet() {
  wp_enqueue_style( 'style', plugins_url( '/specials/style.css', __FILE__ ) );
  }
  add_action( 'template_redirect', 'specials_stylesheet' );
+ */
  
 function my_post_type() {
 	register_post_type( 'specials',
