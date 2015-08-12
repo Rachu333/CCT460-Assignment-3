@@ -12,7 +12,7 @@ Author URI: phoenix.sheridanc.on.ca/~ccit2710
 function my_post_type() {
 	register_post_type( 'specials',
                 array( 
-                'label' => __('Specials!'), 
+				'label' => __('Specials!'), 
 				'singular_label' => __('Slide', 'my_framework'),
 				'_builtin' => false,
 				'category_name' => 'specials',
@@ -29,65 +29,73 @@ function my_post_type() {
 						'custom-fields',
 						'editor',
             			'thumbnail')
+					) 
+				);
 }
-add_action('init', 'my_post_type');
-add_theme_support( 'post-thumbnails' );
+add_action	('init', 'my_post_type');
+add_theme_support	( 'post-thumbnails' );
 
 class Specials extends WP_Widget {
 	/**
-	 * This is to register our "Plugin" widget with WordPress. "Specials" is the name of your widget.
+	 * This is to register the Specials widget with WordPress.
 	 */
-	function __construct() {
-		parent::__construct(
-			'specials',
-			__( 'Specials Plugin', 'text_domain' ), // This is the name of our widget
-			array( 'description' => __( 'The widget on the site', 'text_domain' ), ) // Args
-		);
-	}
 
-	/* This is the front-end display of the widget; how the widget will appear. 
-Creating a post type called specials that will show only 4 posts per page.
-	*/
+	function __construct() {
+			parent::__construct(
+				'specials',
+				__( 'Specials Plugin', 'text_domain' ), // This is the name of our widget
+				array( 'description' => __( 'The widget on the site', 'text_domain' ), ) // Args
+	);
+}
+
+/* This is the front-end display of the widget; how the widget will appear. Creating a post type called specials that will show only 4 posts per page.
+	*/ 
+	
 	public function widget( $args, $instance ) {
-		echo $args['before_widget'];
-		if ( ! empty( $instance['title'] ) ) {
+			echo $args['before_widget'];
+				if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
 		}
 		
-			$new = array('post_type'=> 'specials', 'showposts' => 4);
-			$my_query = new WP_query($new);
+		$new = array('post_type'=> 'specials', 'showposts' => 4);
+		$my_query = new WP_query($new);
 		
-		if ($my_query->have_posts()) : while ($my_query->have_posts()) : $my_query->the_post(); ?>
+				if ($my_query->have_posts()) : while ($my_query->have_posts()) : $my_query->the_post(); ?>
 		
 		
-			<article id="post-<?php the_ID(); ?>"<?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>"<?php post_class(); ?>>
 			<h2 class="post-title">
 				<?php the_title(); ?>
 			</h2>
+			
 		<div class="entry-content">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-		<?php the_post_thumbnail('thumbnail'); ?> </a> 	
+<?php 	the_post_thumbnail('thumbnail'); ?> </a> 	
 			
 		</div><!-- .entry-content -->
 		</article><!-- #post-## -->
 		<?php endwhile; endif; ?>
+
 <?php
+
 		echo $args['after_widget'];
 	}
 
-	/* This is the back-end of the widget form; how the widget will look. */
+/* This is the back-end of the widget form; how the widget will look. */
 	
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'text_domain' );
-		?>
-		<p>
+			$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'text_domain' );
+?>
+	
+	<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
-		<?php 
+
+<?php 
 	}
 
-	/**
+	/** Comment 
 	 * 
 
 	 */
@@ -95,7 +103,7 @@ Creating a post type called specials that will show only 4 posts per page.
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 
-		return $instance;
+	return $instance;
 	}
 
 } // 
