@@ -13,7 +13,7 @@ Specials is a plugin designed for our prototype client El Burrito to display the
 LONG DESCRIPTION
 This plugin helps add/edit your weekly specials and activate or remove it as needed. This ensures if the restaurant has no specials for the week, all they have to do is remove the widget which lets them customize their menu without too much code.
 
-Our plugin works as a widget that can be activated directly from the sidebar.Once activated all you need to do is decide where you would like to display your plugin through the use of widgets.
+Our plugin works as a widget that can be activated directly from the sidebar. Once activated all you need to do is decide where you would like to display your plugin through the use of widgets.
 
 One can edit the specials menu from Wordpress directly without having to use actual code. 
 
@@ -28,9 +28,9 @@ Here you can find information on how to install the plugin and get it to work on
 3. When you click on Widgets in the menuc column, you should find a widget with the name "Specials" that you can activate.
 
 == FREQUENTLY ASKED QUESTIONS == 
- 1. How can i edit the specials plugin?
+ 1. How can I edit the specials plugin?
 
-You can activated this directly from your  WordPress dashboard under the "Specials" page you should see on your dashboard.
+You can activate this directly from your  WordPress dashboard under the "Specials" page you should see on your dashboard.
 
 2. How can I modify my plugin's theme?
 
