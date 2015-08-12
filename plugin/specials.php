@@ -14,21 +14,25 @@ Author URI: phoenix.sheridanc.on.ca/~ccit2710
 
 function register_plugin_styles()
 	{
- wp_register_style( 'plugin-style', plugins_url('/plugins/style.css' ) );
+ wp_register_style( 'plugin-style', plugins_url('/plugin.css' ) );
 	wp_enqueue_style( 'plugin-style' );
  }
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
 
+// Creating a Special widget.
+class Specials extends WP_Widget {
+	/**
+	 * This is to register the Specials widget with WordPress.
+	 */
 
-// FATIMA;S CODE
-/*
-function specials_stylesheet() {
- wp_enqueue_style( 'style', plugins_url( '/specials/style.css', __FILE__ ) );
- }
- add_action( 'template_redirect', 'specials_stylesheet' );
- */
- 
-function my_post_type() {
+	function __construct() {
+			parent::__construct(
+				'specials',
+				__( 'Specials Plugin', 'text_domain' ), // This is the name of our widget
+				array( 'description' => __( 'The widget on the site', 'text_domain' ), ) // Args
+	);
+}
+ function my_post_type() {
 	register_post_type( 'specials',
                 array( 
 				'label' => __('Specials!'), 
@@ -54,18 +58,7 @@ function my_post_type() {
 add_action	('init', 'my_post_type');
 add_theme_support	( 'post-thumbnails' );
 
-class Specials extends WP_Widget {
-	/**
-	 * This is to register the Specials widget with WordPress.
-	 */
 
-	function __construct() {
-			parent::__construct(
-				'specials',
-				__( 'Specials Plugin', 'text_domain' ), // This is the name of our widget
-				array( 'description' => __( 'The widget on the site', 'text_domain' ), ) // Args
-	);
-}
 
 /* This is the front-end display of the widget; how the widget will appear. Creating a post type called specials that will show only 4 posts per page.
 We use $args to echo arguments passed on to function.
