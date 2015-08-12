@@ -35,7 +35,7 @@ add_theme_support( 'post-thumbnails' );
 
 class Specials extends WP_Widget {
 	/**
-	 * This is to register widget with WordPress.
+	 * This is to register our "Plugin" widget with WordPress. "Specials" is the name of your widget.
 	 */
 	function __construct() {
 		parent::__construct(
@@ -45,7 +45,9 @@ class Specials extends WP_Widget {
 		);
 	}
 
-	/* This is the front-end display of the widget; how the widget will appear */
+	/* This is the front-end display of the widget; how the widget will appear. 
+Creating a post type called specials that will show only 4 posts per page.
+	*/
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
 		if ( ! empty( $instance['title'] ) ) {
