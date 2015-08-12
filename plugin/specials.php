@@ -56,6 +56,7 @@ class Specials extends WP_Widget {
 	);
 }
 
+?>
 <?php
 
 		echo $args['after_widget'];
