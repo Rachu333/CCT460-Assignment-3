@@ -13,14 +13,22 @@ function my_post_type() {
 	register_post_type( 'specials',
                 array( 
                 'label' => __('Specials!'), 
+				'singular_label' => __('Slide', 'my_framework'),
+				'_builtin' => false,
 				'category_name' => 'specials',
+				'exclude_from_search' => true, // Exclude from Search Results
+				'capability_type' => 'page',
 				'public' => true, 
+				'show_ui' => true,
+				'show_in_nav_menus' => false,
 				'rewrite' => array(
 					'slug' => 'specials-menu',
 				),
-					) 
-				);
-				
+				'supports' => array(
+						'title',
+						'custom-fields',
+						'editor',
+            			'thumbnail')
 }
 add_action('init', 'my_post_type');
 add_theme_support( 'post-thumbnails' );
