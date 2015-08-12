@@ -21,5 +21,11 @@ Author URI: http://www.sheridanc.on.ca
     text-transform: uppercase;
   }
   
+.post-title
+	{
+	  text-decoration: none;
+	  color: #FF0066;
+	}
+  
   
 
