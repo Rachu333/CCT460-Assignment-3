@@ -12,7 +12,13 @@ Author URI: http://www.sheridanc.on.ca
     float: right;
   }
   
-.secondary
-  {
-    float:left;
-  }
+#secondary
+{
+  float: left;
+}
+
+#sidebar
+{
+  float: left
+  ;
+}
