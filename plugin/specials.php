@@ -9,9 +9,6 @@ Version: 1.0
 Author URI: phoenix.sheridanc.on.ca/~ccit2710
 */
 
-// Enqueing the style sheet into the plugin folder
-
-
 function register_plugin_styles()
 	{
  wp_register_style( 'plugin-style', plugins_url('/plugin.css' ) );
@@ -19,20 +16,8 @@ function register_plugin_styles()
  }
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
 
-// Creating a Special widget.
-class Specials extends WP_Widget {
-	/**
-	 * This is to register the Specials widget with WordPress.
-	 */
 
-	function __construct() {
-			parent::__construct(
-				'specials',
-				__( 'Specials Plugin', 'text_domain' ), // This is the name of our widget
-				array( 'description' => __( 'The widget on the site', 'text_domain' ), ) // Args
-	);
-}
- function my_post_type() {
+function my_post_type() {
 	register_post_type( 'specials',
                 array( 
 				'label' => __('Specials!'), 
@@ -58,10 +43,20 @@ class Specials extends WP_Widget {
 add_action	('init', 'my_post_type');
 add_theme_support	( 'post-thumbnails' );
 
+class Specials extends WP_Widget {
+	/**
+	 * This is to register the Specials widget with WordPress.
+	 */
 
+	function __construct() {
+			parent::__construct(
+				'specials',
+				__( 'Specials Plugin', 'text_domain' ), // This is the name of our widget
+				array( 'description' => __( 'The widget on the site', 'text_domain' ), ) // Args
+	);
+}
 
 /* This is the front-end display of the widget; how the widget will appear. Creating a post type called specials that will show only 4 posts per page.
-We use $args to echo arguments passed on to function.
 	*/ 
 	
 	public function widget( $args, $instance ) {
@@ -94,7 +89,7 @@ We use $args to echo arguments passed on to function.
 		echo $args['after_widget'];
 	}
 
-/* This is the back-end of our widget; how our widget will look. */
+/* This is the back-end of the widget form; how the widget will look. */
 	
 	public function form( $instance ) {
 			$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'New title', 'text_domain' );
@@ -124,3 +119,4 @@ We use $args to echo arguments passed on to function.
 add_action( 'widgets_init', function(){
 	register_widget( 'Specials' );
 });
+
