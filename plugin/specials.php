@@ -8,16 +8,17 @@ Author: Isha Thaker, Alistair D'Cruz, Rachana Sai
 Version: 1.0
 Author URI: phoenix.sheridanc.on.ca/~ccit2710
 */
+
 // Enqueing the style sheet into the plugin folder
 
-/*
+
 function register_plugin_styles()
 	{
  wp_register_style( 'plugin-style', plugins_url('/specials/style.css' ) );
 	wp_enqueue_style( 'plugin-style' );
  }
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
-*/
+
 
 // FATIMA;S CODE
 /*
