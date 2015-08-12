@@ -9,7 +9,17 @@ Author URI: http://www.sheridanc.on.ca
 
 #secondary
   {
-    text-align:left;
+    text-align:center;
     line-height:1.2;
     float:right;
   }
+  
+.widget-title
+  {
+    font-size:40px;
+    font-family:Verdana, sans-seriff;
+    text-transform: uppercase;
+  }
+  
+  
+
