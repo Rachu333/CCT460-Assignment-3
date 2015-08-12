@@ -14,7 +14,7 @@ Author URI: phoenix.sheridanc.on.ca/~ccit2710
 
 function register_plugin_styles()
 	{
- wp_register_style( 'plugin-style', plugins_url('/specials/style.css' ) );
+ wp_register_style( 'plugin-style', plugins_url('/plugins/style.css' ) );
 	wp_enqueue_style( 'plugin-style' );
  }
 add_action( 'wp_enqueue_scripts', 'register_plugin_styles' );
