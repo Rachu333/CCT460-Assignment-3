@@ -26,6 +26,16 @@ Author URI: http://www.sheridanc.on.ca
 	  text-decoration: none;
 	  color: #FF0066;
 	}
+	
+.widget widget_specials 
+	{
+ 	margin: 25px 50px;
+    }
+
+#sidebar
+	{
+		float: right;
+	}
   
   
 
