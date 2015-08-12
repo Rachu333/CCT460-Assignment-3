@@ -12,23 +12,15 @@ Author URI: phoenix.sheridanc.on.ca/~ccit2710
 function my_post_type() {
 	register_post_type( 'specials',
                 array( 
-                     	'label' => __('Specials!'), 
+                'label' => __('Specials!'), 
 				'category_name' => 'specials',
-				'exclude_from_search' => true, // Exclude from Search Results
-				'capability_type' => 'page',
 				'public' => true, 
-				'show_ui' => true,
-				'show_in_nav_menus' => false,
 				'rewrite' => array(
 					'slug' => 'specials-menu',
 				),
-				'supports' => array(
-						'title',
-						'custom-fields',
-						'editor',
-            			'thumbnail')
 					) 
 				);
+				
 }
 add_action('init', 'my_post_type');
 add_theme_support( 'post-thumbnails' );
@@ -52,7 +44,7 @@ class Specials extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
 		}
 		
-			$new = array('post_type'=> 'specials', 'showposts' => 5);
+			$new = array('post_type'=> 'specials', 'showposts' => 4);
 			$my_query = new WP_query($new);
 		
 		if ($my_query->have_posts()) : while ($my_query->have_posts()) : $my_query->the_post(); ?>
